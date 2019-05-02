@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<title>Meme Lounge</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Styles-->
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/site.css">
+    <link rel="stylesheet" href="styles/welcome.css">
+    <link rel="stylesheet" href="styles/notifications.css">
+    <link rel="stylesheet" href="styles/login-register.css">
+    <link rel="stylesheet" href="styles/meme-feed.css">
+    <link rel="stylesheet" href="styles/my-memes.css">
+    <link rel="stylesheet" href="styles/meme-details.css">
+    <link rel="stylesheet" href="styles/user-profile.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/user-meme-listings.css">
+    <!--Libraries-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="node_modules/sammy/lib/sammy.js"></script>
+    <script src="node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+    <!--Scripts-->
+    <script src="scripts/remote.js"></script>
+    <script src="scripts/notify.js"></script>
+    <script src="scripts/app.js"></script>
+    <!--Services-->
+    <script src="scripts/services/authService.js"></script>
+    <script src="scripts/services/memeService.js"></script>
+    <!--Handlers-->
+    <script src="scripts/handlers/authHandler.js"></script>
+    <script src="scripts/handlers/memeHandler.js"></script>
+
+</head>
+<body>
+    <div id="container">
+    </div>
+    <div id="notifications">
+        <div id="loadingBox" class="notification">
+            <span>Loading …</span>
+        </div>
+        <div id="infoBox" class="notification">
+            <span>Info</span>
+        </div>
+        <div id="errorBox" class="notification">
+            <span>Error</span>
+        </div>
+    </div>
+</body>
+</html>

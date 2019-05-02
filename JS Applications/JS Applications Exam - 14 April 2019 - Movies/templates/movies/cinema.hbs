@@ -1,0 +1,21 @@
+{{> header}}
+
+<div id="cinema">
+    <h1>All Movies</h1>
+    <form action="#/movies/search">
+        <label>Search genre:</label>
+        <input type="text" name="search" id="searchVal">
+        <input type="submit" value="Search">
+    </form>
+    <div class="movies">
+        {{#if noResult}}
+            <h1 class="align-text-top" style="margin-left: 43%">No results</h1>
+        {{/if}}
+
+        {{#each movies}}
+            {{> movie}}
+        {{/each}}
+    </div>
+</div>
+
+{{> footer}}

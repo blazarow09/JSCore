@@ -1,0 +1,18 @@
+{{> header}}
+
+<div id="meme-feed">
+    <h1>Meme Feed</h1>
+    <div id="memes">
+
+        {{#if isEmptyMemeDb}}
+            <p class="no-memes">No memes in database.</p>
+        {{else}}
+            {{#each memes}}
+                {{> meme}}
+            {{/each}}
+        {{/if}}
+
+    </div>
+</div>
+
+{{> footer}}

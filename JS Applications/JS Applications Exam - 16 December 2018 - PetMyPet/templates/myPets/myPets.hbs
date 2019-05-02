@@ -1,0 +1,12 @@
+{{> header}}
+
+<section class="myPet">
+    <h1>My pets</h1>
+    <ul class="other-pets-list">
+        {{#each pets}}
+            {{> pet}}
+        {{/each}}
+    </ul>
+</section>
+
+{{> footer}}
