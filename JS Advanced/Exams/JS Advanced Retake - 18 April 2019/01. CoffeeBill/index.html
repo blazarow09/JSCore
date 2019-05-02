@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Bill</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h2>Coffee Bill</h2>
+<table id="bill">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody id="product-list"></tbody>
+    <tfoot>
+    <tr>
+        <td>Total:</td>
+        <td>0.00</td>
+    </tr>
+    </tfoot>
+</table>
+<section id="add-product">
+    <h3>Add new product</h3>
+    <label>
+        <span>
+            Product:
+        </span>
+        <input type="text">
+    </label>
+    <label>
+        <span>
+            Price:
+        </span>
+        <input type="number">
+    </label>
+    <button onclick="addProduct()">Add</button>
+</section>
+
+<script>
+    function addProduct() {
+    	let productElement = $('#add-product input').eq(0);
+    	let priceElement = $('#add-product input').eq(1);
+
+	    if(productElement.val() && priceElement.val() && priceElement.val() > 0){
+
+	    	let products = $('#product-list');
+	    	let tr = $('<tr>');
+	    	let tdProduct = $('<td>');
+	    	let tdPrice = $('<td>');
+
+	    	let currentTotal = $('tfoot > tr > td').eq(1).text();
+	    	let total = +currentTotal + +priceElement.val();
+
+		    $('tfoot > tr > td').eq(1).text(total);
+
+		    tdProduct.text(productElement.val());
+		    tdPrice.text(priceElement.val());
+
+		    tr.append(tdProduct).append(tdPrice);
+		    products.append(tr);
+
+		    productElement.val('');
+		    priceElement.val('');
+        }
+    }
+</script>
+
+</body>
+</html>

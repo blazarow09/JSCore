@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Sections</title>
+    <style>
+        #content {
+            width: 1000px;
+        }
+
+        #content div {
+            float: left;
+            width: 300px;
+            height: 300px;
+            margin: 2em;
+            background: #5555ff;
+            text-align: center;
+        }
+
+        #content div p {
+            color: white;
+            margin: 6em 3em 6em 3em;
+        }
+    </style>
+</head>
+<div id="content">
+</div>
+<body onload="create(['Section 1', 'Section 2', 'Section 3', 'Section 4']);">
+<script>
+    function create(sentences) {
+
+        let contentElement = document.querySelector('#content');
+        let sectionsCount = sentences.length;
+
+        for (let i = 0; i <= sectionsCount - 1; i++){
+
+            let divElement = document.createElement('div');
+            let pElement = document.createElement('p');
+            pElement.textContent = sentences[i];
+            pElement.style.display = 'none';
+            divElement.appendChild(pElement);
+            contentElement.appendChild(divElement);
+        }
+
+        $('#content').on('click', 'div', show);
+
+        function show(e) {
+
+            e.target.firstChild.style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html>
